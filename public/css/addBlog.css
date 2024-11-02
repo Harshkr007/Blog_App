@@ -1,0 +1,53 @@
+body {
+    background-color: #222831;
+    color: #ffffff;
+}
+
+.form-container {
+    background-color: #31363f;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #f0f0f0;
+}
+
+.form-label {
+    color: #f0f0f0;
+}
+
+.form-control {
+    background-color: #222831;
+    color: #ffffff;
+    border: 1px solid #686d76;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #ffffff;
+    box-shadow: none;
+}
+
+textarea.form-control {
+    resize: none;
+}
+
+.btn-primary {
+    background-color: #686d76;
+    border: none;
+    height: 45px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #5a6268;
+}
+
+a {
+    color: #a9b3c1;
+}
+
+a:hover {
+    color: #ffffff;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/postBlog.css">
+    <title>Blog_Homepage</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    <%- include('./partials/alert') %> 
+    <% if (locals.blogs != -1) { %>
+        <% locals.blogs.forEach(blog => { return %>
+        <div class="postCard">
+            <div class="parent">
+                <div class="div1"><img src=<%= blog.postImageUrl %> alt="Post image"></div>
+                <div class="div2">
+                    <div class="profile-section">
+                        <div class="profile-image">
+                            <img src= <%= blog.postOwnerAvatar %> alt="Profile picture">
+                        </div>
+                        <div class="profile-text">
+                            <p><%= blog.postOwnerFullName  %></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="div3">
+                  <% if ( blog.postOwnerAndUserSame ) { %>
+                    <button class="edit"><i class="fa-solid fa-ellipsis"></i></button> 
+                  <% } else { %>
+                   <div></div>
+                   <% } %>    
+                </div>
+                <div class="div4">
+                    <p class="post-text"><%= blog.postBody %></p>
+                </div>
+                <div class="div5">
+                    <p class="likesCount"><%=blog.likesCount %></p>
+                    <a href="#" class="action-button">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+                </div>
+                <div class="div6">
+                    <a href="#" class="action-button">
+                        <i class="fa-regular fa-comment"></i>
+                    </a>
+                </div>
+                <div class="div7">
+                    <p class="timestamp"><%=blog.createdAt %></p>
+                    <form action="/blog/delete" method="POST">
+                        <input type="hidden" name = "createdBy" value= <%=blog.blogId%>
+                        <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <%}) %>
+    <% } else { %>
+        <div>
+            <h1>No Post yet found</h1>
+        </div>
+        <% } %>
+     
+    
+    <%-include('./partials/scripts') %>
+    <script src="https://kit.fontawesome.com/8cfea1ec16.js" crossorigin="anonymous"></script>
+    
+  </body>
+</html>

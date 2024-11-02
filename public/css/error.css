@@ -1,0 +1,42 @@
+/* General Styling for the Error Page */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #222831;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Centering Content */
+.error-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.content-wrapper {
+    display: inline-block;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: #31363f;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Error Image Styling */
+.error-image {
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Error Message Styling */
+.error-message {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #f0f0f0;
+}
